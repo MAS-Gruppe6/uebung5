@@ -58,6 +58,28 @@ public class AgentBuilder implements ContextBuilder<Object> {
 		grid.moveTo(a1, a1.startingPosition.getX(), a1.startingPosition.getY());
 		grid.moveTo(a2, a2.startingPosition.getX(), a2.startingPosition.getY());
 
+		Goal g = new Goal(8, 4);
+		context.add(g);
+		grid.moveTo(g, g.x, g.y);
+
+		Trap[] traps = new Trap[] { new Trap(1, 0), new Trap(2, 2), new Trap(8, 3), new Trap(9, 1) };
+		Slippery[] slippery = new Slippery[] { new Slippery(0, 3), new Slippery(3, 3), new Slippery(3, 4),
+				new Slippery(5, 2), new Slippery(6, 1), new Slippery(7, 0) };
+		Impassable[] impassable = new Impassable[] { new Impassable(3, 1), new Impassable(3, 2), new Impassable(6, 4),
+				new Impassable(7, 3), new Impassable(7, 4) };
+
+		for (Impassable elem : impassable) {
+			context.add(elem);
+			grid.moveTo(elem, elem.x, elem.y);
+		}
+		for (Slippery elem : slippery) {
+			context.add(elem);
+			grid.moveTo(elem, elem.x, elem.y);
+		}
+		for (Trap elem : traps) {
+			context.add(elem);
+			grid.moveTo(elem, elem.x, elem.y);
+		}
 		return context;
 	}
 

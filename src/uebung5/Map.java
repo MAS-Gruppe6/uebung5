@@ -3,6 +3,7 @@ package uebung5;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import repast.simphony.engine.environment.RunEnvironment;
 import repast.simphony.engine.schedule.ScheduledMethod;
 import repast.simphony.space.continuous.ContinuousSpace;
 import repast.simphony.space.grid.Grid;
@@ -77,6 +78,9 @@ public class Map {
 		}
 
 		if (reset) {
+			if (Robot.rounds == 0) {
+				RunEnvironment.getInstance().pauseRun();
+			}
 			Robot.rounds--;
 			for (Robot robot : agents) {
 				grid.moveTo(robot, robot.startingPosition.getX(), robot.startingPosition.getY());
