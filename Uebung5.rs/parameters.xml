@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<parameters>
+					<parameter name="randomSeed" displayName="Default Random Seed" type="int" 
+						defaultValue="__NULL__"
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+				<parameter name="rate" displayName="rate" type="double" 
+						defaultValue="0.9" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$DoubleConverter"
+									
+		/>
+				<parameter name="rounds" displayName="rounds" type="int" 
+						defaultValue="50" 
+						isReadOnly="false" 
+						converter="repast.simphony.parameter.StringConverterFactory$IntConverter"
+									
+		/>
+		</parameters>
+
+
